@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamService } from '../../services/team.service';
+import { Team } from '../../interfaces/team.interface';
 
 @Component({
   selector: 'app-team-page',
@@ -8,21 +9,30 @@ import { TeamService } from '../../services/team.service';
 })
 export class TeamPageComponent implements OnInit {
 
-  termino: number = 1;
+  termino: number = 0;
+
+  listTeams: Team[]=[];
+
+  arreglo: any[]=[];
 
   constructor(private _teamService: TeamService) { }
 
   ngOnInit(): void {
 
-    this.buscar();
+    
   }
 
   buscar(){
+    console.log(this.termino);
     this._teamService.getTeams(this.termino)
-    .subscribe( teams =>
-      console.log(teams)
+    
+    .subscribe( (team:any) =>
+      //this.arreglo = teams;
+      console.log(team)     
 
     );
+
+    
 
   }
 

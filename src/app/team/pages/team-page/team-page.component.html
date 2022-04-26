@@ -4,9 +4,20 @@
 <div class="container">
     <h5>Buscador</h5>
 
-<div class="div buscador">
-    <input type="number" class="form-control" id="buscador" placeholder="Ingrese algo!!">
-</div>
+<form (ngSubmit)="buscar()" autocomplete="off">
+    <input 
+    type="number" 
+    class="form-control" 
+    id="buscador" 
+    placeholder="Ingrese algo!!"
+    name="buscador"
+    [(ngModel)]="termino"    
+    >
+    
+</form>
+    
+
+
 
 <hr>
 
