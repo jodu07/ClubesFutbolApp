@@ -23,16 +23,20 @@ export class TeamPageComponent implements OnInit {
   }
 
   buscar(){
-    console.log(this.termino);
-    this._teamService.getTeams(this.termino)
     
-    .subscribe( (team:any) =>
-      //this.arreglo = teams;
-      console.log(team)     
+    console.log(this.termino);
+    this._teamService.getTeams(this.termino)    
+    .subscribe( (team) =>{
+
+      this.arreglo = team;
+      console.log('este:', this.arreglo);
+
+     
+
+    }           
 
     );
-
-    
+      
 
   }
 
