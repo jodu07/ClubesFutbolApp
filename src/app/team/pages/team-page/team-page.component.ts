@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamService } from '../../services/team.service';
-import { Team } from '../../interfaces/team.interface';
+import { Team, Coach, Player, Empty } from '../../interfaces/team.interface';
 
 @Component({
   selector: 'app-team-page',
@@ -10,26 +10,21 @@ import { Team } from '../../interfaces/team.interface';
 export class TeamPageComponent implements OnInit {
 
   termino: number = 0;
-
-  listTeams: Team[]=[];
-
-  arreglo: any[]=[];
-
+  team!: Team;  
+   
   constructor(private _teamService: TeamService) { }
 
-  ngOnInit(): void {
-
-    
+  ngOnInit(): void {    
   }
 
   buscar(){
     
     console.log(this.termino);
     this._teamService.getTeams(this.termino)    
-    .subscribe( (team) =>{
+    .subscribe( (result) =>{
 
-      this.arreglo = team;
-      console.log('este:', this.arreglo);
+      this.team = result.result[0];
+      console.log('este:', this.team);
 
      
 

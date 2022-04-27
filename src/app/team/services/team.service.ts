@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Team } from '../interfaces/team.interface';
+import { Empty, Team } from '../interfaces/team.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +18,7 @@ export class TeamService {
   getTeams(codigo: number): Observable<any>{
 
     const url = `${this.apiUrl}?&met=Teams&teamId=${codigo}&APIkey=${this.apiKey}`;
-     return this.http.get<Team[]>(url);
+     return this.http.get<any>(url);
      
 
   }

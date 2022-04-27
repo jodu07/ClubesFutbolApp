@@ -4,11 +4,11 @@ export interface Empty {
 }
 
 export interface Team {
-    team_key:  string;
-    team_name: string;
-    team_logo: string;
-    players:   Player[];
-    coaches:   Coach[];
+    team_key?:  string | undefined;
+    team_name?: string | undefined;
+    team_logo?: string | undefined;
+    players?:   Player[] | undefined;
+    coaches?:   Coach[] | undefined;
 }
 
 export interface Coach {
