@@ -10,7 +10,9 @@ import { Team, Coach, Player, Empty } from '../../interfaces/team.interface';
 export class TeamPageComponent implements OnInit {
 
   termino: number = 0;
-  team!: Team;  
+  team!: Team ;
+
+  players: Player[]=[];
    
   constructor(private _teamService: TeamService) { }
 
@@ -24,7 +26,9 @@ export class TeamPageComponent implements OnInit {
     .subscribe( (result) =>{
 
       this.team = result.result[0];
+      this.players = result.result[0].players;
       console.log('este:', this.team);
+      console.log('players:', this.players);
 
      
 
