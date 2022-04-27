@@ -38,13 +38,13 @@
     
   
 
-    <div class="col lg-6">
-      <div class="row row-cols-1 row-cols-md-2 g-4">
-        <div class="col">
+    <div class="col lg-6" >
+      <div class="row row-cols-1 row-cols-md-2 g-4" >
+        <div class="col" *ngFor="let player of players">
           <div class="card">
-            <!-- <img src="..." class="card-img-top" alt="..."> -->
+            <img src={{player.player_image}} class="card-img-top" alt="..."> 
             <div class="card-body">
-              <h5 class="card-title">ffdfgf</h5>
+              <h5 class="card-title">{{player.player_name}} </h5>
               <p class="card-text">
                 gfdgfgg
               </p>
